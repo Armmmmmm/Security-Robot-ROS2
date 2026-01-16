@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot  xmlns:xacro="https://www.ros.org/wiki/xacro" name="circle_bot">
+    
+    <!-- <xacro:include filename="lidar.xacro"/> -->
+    <!-- <xacro:include filename="gazebo_plugin.xacro"/> -->
+    <!-- <xacro:include filename="Security_Robot_Mark_19.xacro"/> -->
+    <xacro:include filename="Security_Robot_Mark_20.xacro"/>
+    <!-- <xacro:include filename="ros2_control.xacro"/> -->
+
+
+</robot>

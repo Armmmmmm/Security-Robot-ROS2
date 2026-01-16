@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="Security_Robot_Mark_19" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Base Footprint (root) -->
+  <link name="base_footprint">
+    <visual>
+      <geometry>
+        <mesh filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/base_footprint.STL"/>
+      </geometry>
+      <material name="light_blue">
+        <color rgba="0.792 0.820 0.933 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0.0935" rpy="0 0 0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0193 0 -0.00327" rpy="0 0 0"/>
+      <mass value="1.793"/>
+      <inertia ixx="0.0167" ixy="0" ixz="0" iyy="0.0164" iyz="0" izz="0.0328"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/base_link.STL"/>
+      </geometry>
+      <material name="light_blue">
+        <color rgba="0.792 0.820 0.933 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Left Wheel -->
+  <link name="Left_Wheel">
+    <inertial>
+      <origin xyz="0 0 -0.0085" rpy="0 0 0"/>
+      <mass value="0.173"/>
+      <inertia ixx="0.000227" ixy="0" ixz="0" iyy="0.000227" iyz="0" izz="0.000437"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Left_Wheel.STL"/>
+      </geometry>
+      <material name="dark_gray">
+        <color rgba="0.251 0.251 0.251 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Left_Wheel.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Left_Wheel_Joint" type="continuous">
+    <origin xyz="0 0.2083 -0.0305" rpy="-1.5708 0 0"/>
+    <parent link="base_link"/>
+    <child link="Left_Wheel"/>
+    <axis xyz="0 0 1"/>
+    <dynamics friction="0.2"/>
+  </joint>
+
+  <!-- Right Wheel -->
+  <link name="Right_Wheel">
+    <inertial>
+      <origin xyz="0 0 0.0085" rpy="0 0 0"/>
+      <mass value="0.173"/>
+      <inertia ixx="0.000227" ixy="0" ixz="0" iyy="0.000227" iyz="0" izz="0.000437"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Right_Wheel.STL"/>
+      </geometry>
+      <material name="dark_gray">
+        <color rgba="0.251 0.251 0.251 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Right_Wheel.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Right_Wheel_Joint" type="continuous">
+    <origin xyz="0 -0.2083 -0.0305" rpy="-1.5708 0 0"/>
+    <parent link="base_link"/>
+    <child link="Right_Wheel"/>
+    <axis xyz="0 0 1"/>
+    <dynamics friction="0.2"/>
+  </joint>
+
+  <!-- Laser -->
+  <link name="laser">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.03"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- <joint name="laser_joint" type="fixed">
+    <origin xyz="0.17 0 0.12" rpy="0 0 3.136"/>
+    <parent link="base_link"/>
+    <child link="laser"/>
+  </joint> -->
+
+  <joint name="laser" type="fixed">
+    <origin xyz="0.17 0 0.12" rpy="0 0 3.136"/>
+    <parent link="base_link"/>
+    <child link="laser"/>
+  </joint>
+
+</robot>
+

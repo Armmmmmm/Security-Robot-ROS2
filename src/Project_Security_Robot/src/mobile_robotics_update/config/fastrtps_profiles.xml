@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<profiles xmlns="http://www.eprosima.com/ Jalis/etc/transport_profiles.xsd">
+    <profile name="no_shared_memory" is_default_profile="true">
+        <transport_descriptors>
+            <transport_descriptor>
+                <transport_id>UDPv4_int</transport_id>
+                <type>UDPv4</type>
+            </transport_descriptor>
+        </transport_descriptors>
+        <use_builtin_transports>false</use_builtin_transports>
+    </profile>
+</profiles>

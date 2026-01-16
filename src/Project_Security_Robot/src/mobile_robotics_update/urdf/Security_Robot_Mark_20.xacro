@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+<robot name="Security_Robot_Mark_20" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  <xacro:property name="meshes_path" value="file:///home/arm/ros2_ws/src/mobile_robotics_update/meshes" />
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00733755049412185 -5.39717628510772E-16 -0.010920872627138"
+        rpy="0 0 0" />
+      <mass
+        value="1.66265182518031" />
+      <inertia
+        ixx="0.0166804508531607"
+        ixy="2.3768478476067E-08"
+        ixz="-1.68551668529348E-16"
+        iyy="0.0163937587087183"
+        iyz="-4.59260777569602E-19"
+        izz="0.0327738693222473" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find mobile_robotics_update)/meshes//base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find mobile_robotics_update)/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Left_Wheel">
+    <inertial>
+      <origin
+        xyz="3.7876469103962E-06 -2.34057693504833E-06 -0.00855350930851936"
+        rpy="0 0 0" />
+      <mass
+        value="0.173345367563793" />
+      <inertia
+        ixx="0.000227224601650837"
+        ixy="-6.33051985683366E-12"
+        ixz="6.17337080519082E-09"
+        iyy="0.000227224587874389"
+        iyz="-3.80890662274385E-09"
+        izz="0.00043669530740078" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find mobile_robotics_update)/meshes/Left_Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find mobile_robotics_update)/meshes/Left_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Wheel_Joint"
+    type="continuous">
+    <origin
+      xyz="0 0.2083 -0.0305"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Left_Wheel" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      friction="0.2" />
+  </joint>
+  <link
+    name="Right_Wheel">
+    <inertial>
+      <origin
+        xyz="-9.0687651226466E-08 4.45155537705244E-06 0.00855350930851917"
+        rpy="0 0 0" />
+      <mass
+        value="0.173345367563793" />
+      <inertia
+        ixx="0.000227224585891191"
+        ixy="2.9700141244675E-12"
+        ixz="1.42703154393877E-10"
+        iyy="0.000227224603634035"
+        iyz="-7.25244183619711E-09"
+        izz="0.00043669530740078" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find mobile_robotics_update)/meshes/Right_Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find mobile_robotics_update)/meshes/Right_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Wheel_Joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.2083 -0.0305"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Right_Wheel" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      friction="0.2" />
+  </joint>
+  <link name="base_footprint">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find mobile_robotics_update)/meshes/base_footprint.STL"/>
+      </geometry>
+      <material name="light_blue">
+        <color rgba="0.792 0.820 0.933 1"/>
+      </material>
+    </visual>
+  </link>
+   <joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0.0935" rpy="0 0 0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+  <link
+    name="laser">
+    <inertial>
+      <origin
+        xyz="-0.0024095134520167 0.000766066711738304 -0.0070075846634633"
+        rpy="0 0 0" />
+      <mass
+        value="0.13082435794975" />
+      <inertia
+        ixx="4.50326969983476E-05"
+        ixy="-1.12117402106384E-06"
+        ixz="1.28379184302747E-07"
+        iyy="5.52230197073E-05"
+        iyz="1.57444487872041E-07"
+        izz="9.05201766221748E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find mobile_robotics_update)/meshes/Lidar_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find mobile_robotics_update)/meshes/Lidar_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.17407 -0.0011926 0.10093"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link name="imu_link"/>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/> <!-- ปรับตำแหน่งให้ตรงกับที่ติดตั้งจริง -->
+  </joint>
+  <!-- <link name="laser">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.03"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+  </link> -->
+
+  <!-- <joint name="laser_joint" type="fixed">
+    <origin xyz="0.17 0 0.12" rpy="0 0 3.136"/>
+    <parent link="base_link"/>
+    <child link="laser"/>
+  </joint> -->
+
+  <!-- <joint name="laser" type="fixed">
+    <origin xyz="0.17 0 0.12" rpy="0 0 3.136"/>
+    <parent link="base_link"/>
+    <child link="laser"/>
+  </joint> -->
+</robot>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Assembly_Robotics_">
+  <link name="base_footprint">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </visual> -->
+  </link>
+  <link
+    name="Left_Wheel">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-15 3.81639164714898E-17 -0.0119990021120867"
+        rpy="0 0 0" />
+      <mass value="0.0547166309120092" />
+      <inertia
+        ixx="1.98210000708045E-05"
+        ixy="2.90661193161068E-21"
+        ixz="-3.68790204300559E-19"
+        iyy="1.98210000708045E-05"
+        iyz="-5.96692615391865E-20"
+        izz="3.41909881818311E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Left_Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Left_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Leftwheel" type="continuous">
+    <origin xyz="0.00057056 0.114 0.0325" rpy="-1.5708 0 -0.0050049" />
+    <parent link="base_footprint" />
+    <child
+      link="Left_Wheel" />
+    <axis
+      xyz="0 0 -1" />
+    
+  </joint>
+  <link
+    name="Right_Wheel">
+    <inertial>
+      <origin
+        xyz="4.57966997657877E-16 -6.55725473919233E-16 0.0119990021120729"
+        rpy="0 0 0" />
+      <mass
+        value="0.0547166309120093" />
+      <inertia
+        ixx="1.98210000708046E-05"
+        ixy="-5.22534321950479E-21"
+        ixz="-3.69657089582546E-19"
+        iyy="1.98210000708046E-05"
+        iyz="-7.75174753587199E-19"
+        izz="3.41909881818312E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Right_Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Right_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Rightwheel" type="continuous">
+    <origin
+      xyz="-0.00057056 -0.114 0.0325"
+      rpy="-1.5708 0 -0.0050049" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="Right_Wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="Caster_Front">
+    <inertial>
+      <origin xyz="-4.56598715807555E-05 -0.00295636792579548 -2.28525197626395E-07" rpy="0 0 0" />
+      <mass value="0.0126947486411066" />
+      <inertia
+        ixx="1.05883743030242E-06"
+        ixy="6.87839381875692E-09"
+        ixz="3.10568150445227E-10"
+        iyy="1.58001061318967E-06"
+        iyz="3.44259899704332E-11"
+        izz="9.96786737340494E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Caster_Front.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Caster_Front.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Casterfront"
+    type="fixed">
+    <origin xyz="0.070047 -0.00035009 0.00985" rpy="-1.5708 0 -0.0050049" />
+    <parent link="base_footprint" />
+    <child link="Caster_Front" />
+    <axis xyz="0 0 0" />
+    
+  </joint>
+  <link
+    name="Caster_Rear">
+    <inertial>
+      <origin
+        xyz="-4.56603285232011E-05 -0.00295636792579547 -1.02448491509644E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0126947486411066" />
+      <inertia
+        ixx="1.05883867228773E-06"
+        ixy="6.87846265448293E-09"
+        ixz="1.39229969434187E-10"
+        iyy="1.58001061318966E-06"
+        iyz="1.54332682266077E-11"
+        izz="9.96785495355183E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Caster_Rear.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/Caster_Rear.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Casterrear"
+    type="fixed">
+    <origin
+      xyz="-0.069806 0.00034976 0.00985"
+      rpy="-1.5708 0 -0.0050049" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="Caster_Rear" />
+    <axis
+      xyz="0 0 0" />
+    
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="-3.81855330086611E-06 9.55575656796936E-09 -0.0160723995699412"
+        rpy="0 0 0" />
+      <mass
+        value="0.202416103758931" />
+      <inertia
+        ixx="0.000237033759020998"
+        ixy="-4.86189717806656E-08"
+        ixz="-6.61133229143501E-18"
+        iyy="0.000226051887332635"
+        iyz="-1.01257762191508E-17"
+        izz="0.000441378989327343" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/arm/ros2_ws/src/mobile_robotics/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_joint" type="fixed">
+    <origin
+      xyz="0 0 0.0675"
+      rpy="0 0 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

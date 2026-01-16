@@ -1,0 +1,37 @@
+# Recommended Safe Configuration for ekf_node (Final Version)
+
+ekf_filter_node:
+  ros__parameters:
+    # --- General Settings ---
+    frequency: 30.0
+    two_d_mode: true
+    publish_tf: true
+    
+    # --- Frame IDs ---
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_footprint 
+    world_frame: odom
+
+    # --- Sensor 0: Odometry from Wheel Encoders ---
+    odom0: odom/raw             # <--- **แก้ไขแล้ว**
+    odom0_config: [false, false, false,
+                   false, false, false,
+                   true,  false, false,  # ใช้ vx
+                   false, false, false,
+                   false, false, true,   # ใช้ vyaw
+                   false, false, false]
+    odom0_differential: false
+    odom0_relative: true
+
+    # --- Sensor 1: IMU Data ---
+    imu0: /imu/data
+    imu0_config: [false, false, false,
+                  false, false, false,
+                  false, false, false,
+                  false, false, true,   # ใช้แค่ความเร็วเชิงมุมรอบแกน Z (vyaw)
+                  false, false, false]
+    imu0_differential: false
+    imu0_relative: true
+    imu0_remove_gravitational_acceleration: true 
+  
